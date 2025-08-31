@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSE OF WEAR- High Quality Blanks | Wholesale & Customisation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: rgba(59, 78, 66, 255);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .banner-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .banner-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #f8f9fa;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .menu-line {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #333;
+            letter-spacing: 2px;
+        }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            stroke: #333;
+            stroke-width: 2;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23e9ecef" width="1000" height="600"/><rect fill="%236c757d" x="100" y="100" width="200" height="300" rx="20"/><rect fill="%23adb5bd" x="350" y="50" width="180" height="350" rx="20"/><rect fill="%23495057" x="600" y="80" width="190" height="320" rx="20"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease-out;
+            transition: all 0.6s ease;
+        }
+
+        .hero-content.fade-out {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-content.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta {
+            background: rgba(59, 78, 66, 255);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(59, 78, 66, 255);
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 30px;
+            right: 0%;
+            display: flex;
+            gap: 15px;
+        }
+
+        .indicator {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        .indicator {
+            border-color: rgba(255, 255, 255, 0.216);
+
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            padding: 6rem 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .welcome-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .welcome-title {
+            font-size: 1rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            background: rgba(59, 78, 66, 255);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-title sup {
+            font-size: 2rem;
+            vertical-align: top;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(59, 78, 66, 255);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(59, 78, 66, 255);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .banner-content {
+                gap: 1rem;
+            }
+
+            .banner-item {
+                font-size: 0.8rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .welcome-title {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .carousel-indicators {
+                bottom: 15px;
+            }
+
+            .indicator {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .welcome-title {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(59, 78, 66, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-size: 1rem;
+            color: white;
+            font-weight: 900;
+            letter-spacing: 3px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+
+        .indicator {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: visible;
+        }
+
+        .indicator span {
+            position: absolute;
+            font-size: 1rem;
+            z-index: 2;
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .progress-ring__circle {
+            fill: transparent;
+            stroke: rgba(255, 255, 255, 0.8);
+            stroke-width: 1;
+            stroke-dasharray: 138;
+            /* circumference ~ 2πr */
+            stroke-dashoffset: 138;
+            transition: stroke-dashoffset 5s linear;
+        }
+
+        .hero-subtitle,
+        .hero-title,
+        .hero-cta {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .welcome {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: #fff;
+            color: #222;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .welcome-text {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .welcome-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #00c8e7;
+            /* same bright aqua color */
+            margin-bottom: 1.5rem;
+        }
+
+        .welcome-title sup {
+            font-size: 1.2rem;
+            vertical-align: top;
+        }
+
+        .welcome-desc {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .welcome-button {
+            margin-top: 2rem;
+        }
+
+        .btn-about {
+            display: inline-block;
+            background: #444;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-about:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .product-section {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            padding: 4rem 2rem;
+            background: #fff;
+        }
+
+        .product-content {
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .product-title {
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #111;
+        }
+
+        .product-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .btn-services {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-services:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Product image */
+        .product-image {
+            position: relative;
+            flex: 1;
+            max-width: 500px;
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 20px;
+        }
+
+        .product-image img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* Hotspot styling */
+        .hotspot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .hotspot::before {
+            content: "+";
+            color: #111;
+            transition: transform 0.3s ease;
+        }
+
+        .hotspot:hover {
+            transform: scale(1.2);
+            background: #f0f0f0;
+        }
+
+        .hotspot.active {
+            background: rgba(59, 78, 66, 255);
+            border-color: rgba(59, 78, 66, 255);
+        }
+
+        .hotspot.active::before {
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        /* Hotspot tooltip */
+        .hotspot-tooltip {
+            position: absolute;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            max-width: 250px;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .hotspot-tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .hotspot-tooltip::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+        }
+
+        .hotspot-tooltip h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #111;
+        }
+
+        .hotspot-tooltip p {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: #666;
+            margin: 0;
+        }
+
+        .hotspot-tooltip .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #999;
+            line-height: 1;
+            padding: 0;
+        }
+
+        .hotspot-tooltip .close-btn:hover {
+            color: #333;
+        }
+
+        /* Mobile responsive tooltips */
+        @media (max-width: 768px) {
+            .hotspot-tooltip {
+                max-width: 200px;
+                padding: 0.8rem 1rem;
+            }
+
+            .hotspot {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
+        .brand-section {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .banner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .banner.small img {
+            object-fit: cover;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .overlay h2,
+        .overlay h3 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 10px;
+            background: #fff;
+            color: #333;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #f0f0f0;
+        }
+
+        .btn.dark {
+            background: #111;
+            color: #fff;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+        }
+
+        .banner video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* fills area, but crops edges */
+            object-position: center;
+        }
+
+        .footer {
+            background: #111;
+            color: #fff;
+            padding: 40px 20px 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-left h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #f0c14b;
+        }
+
+        .footer-socials a {
+            margin-right: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-320px * 6));
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 25s linear infinite;
+        }
+
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        @media (max-width: 768px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-280px * 6));
+                }
+            }
+        }
+
+        @media (max-width: 640px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-240px * 6));
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-animation" id="loading">
+        <div class="loading-logo">HOUSE OF WEAR</div>
+    </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <div class="banner-item">
+                <span class="banner-dot"></span>
+                <span>CUT & SEW</span>
+            </div>
+            <div class="banner-item">
+                <span class="banner-dot"></span>
+                <span>PREMIUM BLANKS</span>
+            </div>
+            <div class="banner-item">
+                <span class="banner-dot"></span>
+                <span>BASICS</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </button>
+
+            <div class="logo">HOUSE OF WEAR</div>
+
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="8" />
+                <path d="21 21l-4.35-4.35" />
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Wholesale & Customisation</div>
+            <h1 class="hero-title">High Quality<br>Blanks</h1>
+            <a href="#products" class="hero-cta">Shop now</a>
+        </div>
+
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="1">
+                <svg class="progress-ring" width="50" height="50">
+                    <circle class="progress-ring__circle" r="22" cx="25" cy="25" />
+                </svg>
+                <span>1</span>
+            </div>
+            <div class="indicator" data-slide="2">
+                <svg class="progress-ring" width="50" height="50">
+                    <circle class="progress-ring__circle" r="22" cx="25" cy="25" />
+                </svg>
+                <span>2</span>
+            </div>
+            <div class="indicator" data-slide="3">
+                <svg class="progress-ring" width="50" height="50">
+                    <circle class="progress-ring__circle" r="22" cx="25" cy="25" />
+                </svg>
+                <span>3</span>
+            </div>
+        </div>
+    </section>
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <div class="welcome-text">
+            <p class="welcome-subtitle">Welcome,</p>
+            <h2 class="welcome-title">We are HOUSE OF WEAR<sup>®</sup></h2>
+            <p class="welcome-desc">
+                Your reliable partner for textile manufacturing. We offer all kind of services
+                to provide you an <strong>one-stop solution</strong> for all your needs:
+                <br><br>
+                From Premium Blanks to custom cuts, designs, prints and more.
+            </p>
+        </div>
+
+        <div class="welcome-button">
+            <a href="#about" class="btn-about">About us</a>
+        </div>
+    </section>
+    <section class="product-section">
+        <div class="product-content">
+            <h2 class="product-title">Create your own products</h2>
+            <p class="product-desc">
+                A product designed by your ideas and needs – supported by our expert team. <br>
+                Learn more about our services:
+            </p>
+            <a href="#services" class="btn-services">HOUSE OF WEAR Services</a>
+        </div>
+
+        <div class="product-image">
+            <img src="https://lemuta.com/cdn/shop/files/Custom_hoodie_manufacturer.webp?v=1741618347&width=1200"
+                alt="Custom Hoodie">
+
+            <!-- Hotspot circles with data attributes for content -->
+            <div class="hotspot" style="top: 40%; left: 55%;" data-title="Premium Hood Design"></div>
+
+            <div class="hotspot" style="top: 65%; left: 25%;" data-title="Kangaroo Pocket"></div>
+
+            <div class="hotspot" style="top: 70%; left: 75%;" data-title="Ribbed Cuffs"></div>
+    </section>
+    <section class="brand-section">
+        <div class="product-content">
+            <h2 class="product-title">Create your own products</h2>
+            <p class="product-desc">
+                A product designed by your ideas and needs – supported by our expert team. <br>
+                Learn more about our services:
+            </p>
+            <a href="#services" class="btn-services">HOUSE OF WEAR Services</a>
+        </div>
+        <br>
+        <!-- Big banner -->
+        <div class="banner">
+            <video autoplay muted loop
+                src="https://lemuta.com/cdn/shop/videos/c/vp/da28c0174a2b4114b63ed23a169f86e6/da28c0174a2b4114b63ed23a169f86e6.HD-1080p-4.8Mbps-30728095.mp4?v=0"
+                alt="Create your own brand">
+                <div class="overlay">
+                    <h2>CREATE YOUR OWN BRAND</h2>
+                    <a href="#" class="btn">Learn more</a>
+                </div>
+        </div>
+
+        <!-- Two side images -->
+        <div class="grid-2">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=80"
+                    alt="Merchandise">
+                <div class="overlay">
+                    <h3>MERCHANDISE</h3>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=80"
+                    alt="Work Fashion">
+                <div class="overlay">
+                    <h3>WORK FASHION</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wide image -->
+        <div class="banner small">
+            <img src="https://lemuta.com/cdn/shop/files/Kollektion_Uebersicht111.jpg?v=1710407061&width=1200"
+                alt="High Quality Blanks">
+            <div class="overlay">
+                <h2>HIGH QUALITY BLANKS</h2>
+            </div>
+        </div>
+
+        <!-- Bottom button -->
+        <div class="cta">
+            <a href="#" class="btn dark">Make an inquiry now!</a>
+        </div>
+    </section>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-16 text-gray-800 tracking-tight uppercase">
+        Our Recent Work
+    </h1>
+    <div class="overflow-hidden w-full p-4 rounded-2xl shadow-2xl">
+        <div class="flex animate-scroll" id="carouselTrack">
+            <!-- Original items -->
+
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1503341960582-b45751874cf0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Street Fashion"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-teal-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Urban Streetwear</h3>
+                    <p class="text-sm opacity-90">Brand Identity</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Hoodie Design"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-green-600/80 to-emerald-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Comfort Wear</h3>
+                    <p class="text-sm opacity-90">Apparel Design</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Denim Collection"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-purple-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Denim Collection</h3>
+                    <p class="text-sm opacity-90">Fashion Line</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Accessories"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-red-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Luxury Accessories</h3>
+                    <p class="text-sm opacity-90">Product Design</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Activewear"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+
+            <!-- Duplicate items for seamless loop -->
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Fashion Design"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-purple-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Minimalist Fashion</h3>
+                    <p class="text-sm opacity-90">Clothing Design</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1503341960582-b45751874cf0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Street Fashion"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-teal-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Urban Streetwear</h3>
+                    <p class="text-sm opacity-90">Brand Identity</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Hoodie Design"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-green-600/80 to-emerald-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Comfort Wear</h3>
+                    <p class="text-sm opacity-90">Apparel Design</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Denim Collection"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-purple-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Denim Collection</h3>
+                    <p class="text-sm opacity-90">Fashion Line</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Accessories"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-red-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Luxury Accessories</h3>
+                    <p class="text-sm opacity-90">Product Design</p>
+                </div>
+            </div>
+
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Activewear"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>HOUSE OF WEAR</h3>
+                <p>High Quality Blanks | Wholesale & Customisation</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-socials">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/tiktok--v1.png" /></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 HOUSE OF WEAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loading animation
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                const loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Menu toggle animation
+        const menuToggle = document.getElementById('menuToggle');
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', function () {
+            const lines = menuToggle.querySelectorAll('.menu-line');
+
+            if (!isMenuOpen) {
+                lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                isMenuOpen = true;
+            } else {
+                lines[0].style.transform = 'rotate(0) translate(0, 0)';
+                lines[1].style.opacity = '1';
+                lines[2].style.transform = 'rotate(0) translate(0, 0)';
+                isMenuOpen = false;
+            }
+        });
+
+        // Carousel indicators with progress animation
+        const indicators = document.querySelectorAll('.indicator');
+        const circles = document.querySelectorAll('.progress-ring__circle');
+        let currentSlide = 0;
+        const slideDuration = 5000; // 5 seconds
+        function activateSlide(index) {
+            indicators.forEach((ind, i) => {
+                ind.classList.remove('active');
+                circles[i].style.transition = 'none';
+                circles[i].style.strokeDashoffset = 138;
+            });
+
+            indicators[index].classList.add('active');
+
+            // Animate progress circle
+            requestAnimationFrame(() => {
+                circles[index].style.transition = `stroke-dashoffset ${slideDuration}ms linear`;
+                circles[index].style.strokeDashoffset = 0;
+            });
+
+            // Change hero background (replace with dynamic images if you like)
+            const hero = document.getElementById('hero');
+            if (currentSlide === 0)
+                hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://lemuta.com/cdn/shop/files/Custom_Zipper_production.webp?v=1741862231&width=600')`;
+
+            if (currentSlide === 1)
+                hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://lemuta.com/cdn/shop/files/Istanbul_Production_Sewing.webp?v=1741862168&width=600')`;
+
+            // Animate hero text (staggered fade-in)
+            const subtitle = document.querySelector('.hero-subtitle');
+            const title = document.querySelector('.hero-title');
+            const cta = document.querySelector('.hero-cta');
+
+            // Reset
+            [subtitle, title, cta].forEach(el => {
+                el.classList.remove('fade-in');
+            });
+
+            // Staggered fade-in
+            setTimeout(() => subtitle.classList.add('fade-in'), 200);
+            setTimeout(() => title.classList.add('fade-in'), 400);
+            setTimeout(() => cta.classList.add('fade-in'), 600);
+        }
+
+        // Handle click on indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                activateSlide(index);
+            });
+        });
+
+        // Auto-rotate slides
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % indicators.length;
+            activateSlide(currentSlide);
+        }, slideDuration);
+
+        // Start first animation
+        activateSlide(0);
+
+        // Smooth scrolling for CTA button
+        document.querySelector('.hero-cta').addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector('#products');
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(card);
+        });
+
+        // HOTSPOT FUNCTIONALITY
+        let activeTooltip = null;
+
+        // Function to create and show tooltip
+        function showTooltip(hotspot) {
+            // Hide any existing tooltip
+            hideAllTooltips();
+
+            const title = hotspot.getAttribute('data-title');
+
+            // Create tooltip element
+            const tooltip = document.createElement('div');
+            tooltip.className = 'hotspot-tooltip';
+            tooltip.innerHTML = `
+            <button class="close-btn">&times;</button>
+            <h4>${title}</h4>
+        `;
+
+            // Position tooltip below the hotspot
+            const rect = hotspot.getBoundingClientRect();
+            const container = hotspot.closest('.product-image');
+            const containerRect = container.getBoundingClientRect();
+
+            // Calculate position relative to the container
+            const left = rect.left - containerRect.left;
+            const top = rect.bottom - containerRect.top + 10;
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+
+            // Adjust if tooltip goes outside container bounds
+            container.appendChild(tooltip);
+
+            // Check if tooltip goes beyond right edge
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const containerRightEdge = containerRect.right;
+
+            if (tooltipRect.right > containerRightEdge) {
+                tooltip.style.left = (left - (tooltipRect.width - 40)) + 'px';
+                // Adjust arrow position
+                tooltip.style.setProperty('--arrow-left', '80%');
+            }
+
+            // Show tooltip with animation
+            setTimeout(() => {
+                tooltip.classList.add('show');
+            }, 50);
+
+            // Mark hotspot as active
+            hotspot.classList.add('active');
+            activeTooltip = { tooltip, hotspot };
+
+            // Add close button functionality
+            const closeBtn = tooltip.querySelector('.close-btn');
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                hideTooltip(tooltip, hotspot);
+            });
+        }
+
+        // Function to hide specific tooltip
+        function hideTooltip(tooltip, hotspot) {
+            tooltip.classList.remove('show');
+            hotspot.classList.remove('active');
+
+            setTimeout(() => {
+                if (tooltip.parentNode) {
+                    tooltip.parentNode.removeChild(tooltip);
+                }
+            }, 300);
+
+            if (activeTooltip && activeTooltip.tooltip === tooltip) {
+                activeTooltip = null;
+            }
+        }
+
+        // Function to hide all tooltips
+        function hideAllTooltips() {
+            const existingTooltips = document.querySelectorAll('.hotspot-tooltip');
+            const activeHotspots = document.querySelectorAll('.hotspot.active');
+
+            existingTooltips.forEach(tooltip => {
+                tooltip.classList.remove('show');
+                setTimeout(() => {
+                    if (tooltip.parentNode) {
+                        tooltip.parentNode.removeChild(tooltip);
+                    }
+                }, 300);
+            });
+
+            activeHotspots.forEach(hotspot => {
+                hotspot.classList.remove('active');
+            });
+
+            activeTooltip = null;
+        }
+
+        // Add click event listeners to all hotspots
+        document.querySelectorAll('.hotspot').forEach(hotspot => {
+            hotspot.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                // If this hotspot is already active, hide its tooltip
+                if (hotspot.classList.contains('active')) {
+                    const tooltip = document.querySelector('.hotspot-tooltip.show');
+                    if (tooltip) {
+                        hideTooltip(tooltip, hotspot);
+                    }
+                } else {
+                    // Show tooltip for this hotspot
+                    showTooltip(hotspot);
+                }
+            });
+        });
+
+        // Hide tooltips when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.hotspot') && !e.target.closest('.hotspot-tooltip')) {
+                hideAllTooltips();
+            }
+        });
+
+        // Hide tooltips on scroll
+        window.addEventListener('scroll', () => {
+            if (activeTooltip) {
+                hideAllTooltips();
+            }
+        });
+    </script>
+</body>
+
+</html>
