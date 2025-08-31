@@ -907,6 +907,78 @@
                 }
             }
         }
+       
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+
+    .search-icon {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      stroke-width: 2;
+      cursor: pointer;
+    }
+
+    /* Menu styles */
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      background: #222;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 15px;
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 0;
+    }
+
+    .nav-menu a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-menu {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        width: auto;
+        gap: 20px;
+        padding: 0;
+      }
+    }
     </style>
 </head>
 
@@ -933,24 +1005,30 @@
             </div>
         </div>
     </div>
+<nav class="navbar">
+    <div class="nav-container">
+      <button class="menu-toggle" id="menuToggle">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </button>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <button class="menu-toggle" id="menuToggle">
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
-            </button>
+      <div class="logo">HOUSE OF WEAR</div>
 
-            <div class="logo">HOUSE OF WEAR</div>
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none">
+        <circle cx="11" cy="11" r="8" />
+        <path d="M21 21l-4.35-4.35" />
+      </svg>
+    </div>
 
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none">
-                <circle cx="11" cy="11" r="8" />
-                <path d="21 21l-4.35-4.35" />
-            </svg>
-        </div>
-    </nav>
+    <div class="nav-menu" id="navMenu">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -1530,6 +1608,11 @@
                 hideAllTooltips();
             }
         });
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
     </script>
 </body>
 
