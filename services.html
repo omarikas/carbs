@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSE OF WEAR- High Quality Blanks | Wholesale & Customisation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: rgba(59, 78, 66, 255);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .banner-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .banner-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #f8f9fa;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .menu-line {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #333;
+            letter-spacing: 2px;
+        }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            stroke: #333;
+            stroke-width: 2;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            background-image: url('https://brandsfactoryco.com/wp-content/uploads/2023/09/8.jpeg');
+        }
+
+        .hero-content {
+            text-align: center;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            width: 100%;
+            padding: 0 2rem;
+            position: absolute;
+            bottom: 0;
+            height: 200px;
+            animation: fadeInUp 1s ease-out;
+            transition: all 0.6s ease;
+        }
+
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .banner-content {
+                gap: 1rem;
+            }
+
+            .banner-item {
+                font-size: 0.6rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .welcome-title {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .carousel-indicators {
+                bottom: 15px;
+            }
+
+            .indicator {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .welcome-title {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(59, 78, 66, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-size: 1rem;
+            color: white;
+            font-weight: 900;
+            letter-spacing: 3px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+
+
+
+        .footer {
+            background: #111;
+            color: #fff;
+            padding: 40px 20px 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-left h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #f0c14b;
+        }
+
+        .footer-socials a {
+            margin-right: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-320px * 6));
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 25s linear infinite;
+        }
+
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        @media (max-width: 768px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-280px * 6));
+                }
+            }
+        }
+
+        @media (max-width: 640px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-240px * 6));
+                }
+            }
+        }
+
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2;
+            cursor: pointer;
+        }
+
+        /* Menu styles */
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            background: #222;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+     .hero h1 {
+        color: #fff;
+        font-weight: bolder;
+        font-size: 2.5rem;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(59, 78, 66, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-animation" id="loading">
+        <div class="loading-logo">HOUSE OF WEAR</div>
+    </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <div class="banner-item">
+                <span class="banner-dot"></span>
+                <span>CUT & SEW</span>
+            </div>
+            <div class="banner-item">
+                <span class="banner-dot"></span>
+                <span>PREMIUM BLANKS</span>
+            </div>
+            <div class="banner-item">
+                <span class="banner-dot"></span>
+                <span>BASICS</span>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </button>
+
+            <div class="logo">HOUSE OF WEAR</div>
+
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+            </svg>
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="./index.html">Home</a>
+            <a href="./services.html">Services</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>Our Services</h1>
+        <div class="hero-content">
+        </div>
+
+    </section>
+    <section>
+        <div class="elementor-widget-container">
+            <section class="custom-services-section">
+                <div class="custom-services-container">
+                    <div class="custom-service-item">
+                        <a href="https://brandsfactoryco.com/dtf-printing/" target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/plotter-ezgif.com-effects.gif"
+                                    alt="DTF Printing">
+                            </div>
+                            <h2>DTF</h2>
+                        </a>
+                    </div>
+                    <div class="custom-service-item">
+                        <a  target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/embroidery-ezgif.com-effects.gif"
+                                    alt="Embroidery">
+                            </div>
+                            <h2>Embroidery</h2>
+                        </a>
+                    </div>
+                    <div class="custom-service-item">
+                        <a  target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/tshirt-ezgif.com-effects.gif"
+                                    alt="Silk Screen">
+                            </div>
+                            <h2>Silk Screen</h2>
+                        </a>
+                    </div>
+                    <div class="custom-service-item">
+                        <a  target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/t-shirt-ezgif.com-effects.gif"
+                                    alt="Garment Dye">
+                            </div>
+                            <h2>Garment Dye</h2>
+                        </a>
+                    </div>
+                    <div class="custom-service-item">
+                        <a  target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/ui-design-ezgif.com-effects.gif"
+                                    alt="Graphic Design">
+                            </div>
+                            <h2>Graphic Design</h2>
+                        </a>
+                    </div>
+                    <div class="custom-service-item">
+                        <a  target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/factory-ezgif.com-effects.gif"
+                                    alt="Manufacturing">
+                            </div>
+                            <h2>Manufacturing</h2>
+                        </a>
+                    </div>
+                    <div class="custom-service-item">
+                        <a  target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/price-tag-ezgif.com-effects.gif"
+                                    alt="Finishing">
+                            </div>
+                            <h2>Finishing</h2>
+                        </a>
+                    </div>
+
+                    <div class="custom-service-item">
+                        <a  target="_blank">
+                            <div class="custom-image-wrapper">
+                                <img decoding="async"
+                                    src="https://brandsfactoryco.com/wp-content/uploads/2025/05/cute-camera-ezgif.com-effects.gif"
+                                    alt="Brand Photoshoot">
+                            </div>
+                            <h2>Brand Photoshoot</h2>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .custom-services-section {
+                    text-align: center;
+                    padding: 25px 0;
+                }
+
+                .custom-section-title {
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-bottom: 40px;
+                    font-family: sequel;
+                }
+
+                .custom-services-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    gap: 30px;
+                }
+
+                .custom-service-item {
+                    text-align: center;
+                    flex: 1 1 22%;
+                    /* For desktop view, 4 items per row */
+                    margin-bottom: 30px;
+                    position: relative;
+                    transition: all 0.3s ease;
+                    /* Smooth transition */
+                }
+
+                .custom-service-item a {
+                    position: relative;
+                    display: block;
+                }
+
+                .custom-image-wrapper {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+
+                .custom-service-item img {
+                    width: 35%;
+                    margin: auto;
+                    /* Adjusted width for images */
+                    height: auto;
+
+  filter: hue-rotate(220deg);
+                    border: none;
+                    transition: transform 0.3s ease;
+                    /* Add smooth transition for zoom */
+                }
+
+                h2 {
+                    font-size: 0.91rem;
+                    margin-top: 0px;
+                    margin-bottom: 8px;
+                    font-family: sequel;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
+                    /* Smooth transition */
+                    color: black;
+                }
+
+                .custom-service-item:hover h2 {
+
+                    color: #375DA4;
+                    /* Change text color */
+                }
+
+                /* For tablets (1024px) */
+                @media (max-width: 1024px) {
+                    .custom-service-item {
+                        flex: 1 1 45%;
+                        /* For tablets, 2 items in a row */
+                    }
+                }
+
+                /* For mobile (768px) */
+                @media (max-width: 768px) {
+                    .custom-service-item {
+                        flex: 1 1 45%;
+                        /* For mobile, 2 items per row */
+                        max-width: 42%;
+                        /* Ensure each item takes up 40% of the screen */
+                    }
+
+                    .custom-service-item h2 {
+                        font-size: 0.61rem;
+                        /* Smaller text size */
+                        margin-top: 0px;
+                        /* Adjust top margin to bring it closer to the image */
+                        margin-bottom: 0;
+                        /* Remove bottom margin */
+                    }
+
+                    .custom-service-item:hover h2 {
+                        color: #375DA4;
+                        /* Change text color */
+                    }
+
+                    .custom-service-item img {
+                        width: 50%;
+                        margin: auto;
+                        /* Adjusted width for images */
+                        height: auto;
+                        border: none;
+                        transition: transform 0.3s ease;
+                        /* Add smooth transition for zoom */
+                    }
+                }
+            </style>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>HOUSE OF WEAR</h3>
+                <p>High Quality Blanks | Wholesale & Customisation</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="./index.html">Home</a>
+                <a href="./services.html">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-socials">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/tiktok--v1.png" /></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 HOUSE OF WEAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loading animation
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                const loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Menu toggle animation
+        const menuToggle = document.getElementById('menuToggle');
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', function () {
+            const lines = menuToggle.querySelectorAll('.menu-line');
+
+            if (!isMenuOpen) {
+                lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                isMenuOpen = true;
+            } else {
+                lines[0].style.transform = 'rotate(0) translate(0, 0)';
+                lines[1].style.opacity = '1';
+                lines[2].style.transform = 'rotate(0) translate(0, 0)';
+                isMenuOpen = false;
+            }
+        });
+
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
