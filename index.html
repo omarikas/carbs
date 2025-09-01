@@ -57,7 +57,7 @@
         /* Navigation */
         .navbar {
             background: #f8f9fa;
-            padding: 1rem 0;
+            padding: 2rem 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
@@ -70,7 +70,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 2rem 2rem;
         }
 
         .menu-toggle {
@@ -872,7 +872,7 @@
             }
 
             100% {
-                transform: translateX(calc(-320px * 6));
+                transform: translateX(calc(-320px * 8));
             }
         }
 
@@ -891,7 +891,7 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-280px * 6));
+                    transform: translateX(calc(-280px * 8));
                 }
             }
         }
@@ -903,68 +903,134 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-240px * 6));
+                    transform: translateX(calc(-240px * 8));
                 }
             }
         }
-       
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .menu-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
 
 
-    .search-icon {
-      width: 24px;
-      height: 24px;
-      stroke: white;
-      stroke-width: 2;
-      cursor: pointer;
-    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-    /* Menu styles */
-    .nav-menu {
-      display: none;
-      flex-direction: column;
-      background: #222;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      padding: 15px;
-    }
+        }
 
-    .nav-menu.active {
-      display: flex;
-    }
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-    .nav-menu a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 0;
-    }
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
 
-    .nav-menu a:hover {
-      text-decoration: underline;
-    }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2;
+            cursor: pointer;
+        }
+
+        /* Menu styles */
+        .nav-container {
+  display: flex;
+  justify-content: center;  /* centers logo */
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu-toggle {
+  position: absolute;
+  left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  background: #222;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+/* Desktop (≥1024px) */
+@media (min-width: 1024px) {
+  .nav-container {
+    justify-content: space-between;
+    
+  }
+
+  .logo {
+    position: absolute;
+    transform: none;
+    left: 10px;
+    margin-right: auto;
+  }.navbar{
+    padding: 0rem 0;
+}
+
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 2rem;
+    background: none;
+    justify-content: center;
+
+    justify-content: center; /* 👈 center horizontally */
+    align-items: center;
+  }
+
+  .nav-menu a {
+    color: #333;
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: none; /* hide burger on desktop */
+  }
+}
+
+.nav-container{
+    padding: 0;
+}
 
     </style>
+    
 </head>
 
 <body>
@@ -978,11 +1044,6 @@
 
 
 
-
-    <!-- Loading Animation -->
-    <div class="loading-animation" id="loading">
-        <div class="loading-logo">HOUSE OF WEAR</div>
-    </div>
 
     <!-- Top Banner -->
     <div class="top-banner">
@@ -1001,30 +1062,27 @@
             </div>
         </div>
     </div>
-<nav class="navbar">
-    <div class="nav-container">
-      <button class="menu-toggle" id="menuToggle">
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-      </button>
+    <nav   class="navbar">
+  <div class="nav-container">
+    <!-- Burger on the left -->
+    <button class="menu-toggle" id="menuToggle">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+    </button>
 
-      <div class="logo">HOUSE OF WEAR</div>
+    <!-- Logo -->
+    <div class="logo">HOUSE OF WEAR</div>
 
-      <svg class="search-icon" viewBox="0 0 24 24" fill="none">
-        <circle cx="11" cy="11" r="8" />
-        <path d="M21 21l-4.35-4.35" />
-      </svg>
+    <!-- Nav menu -->
+    <div class="nav-menu" id="navMenu">
+      <a href="./index.html">Home</a>
+      <a href="./services.html">Services</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
     </div>
-
-
-        <div class="nav-menu" id="navMenu">
-            <a href="./index.html">Home</a>
-            <a href="./services.html">Services</a>
-            <a href="./about.html">About</a>
-            <a href="./contact.html">Contact</a>
-        </div>
-  </nav>
+  </div>
+</nav>
 
 
     <!-- Hero Section -->
@@ -1073,20 +1131,6 @@
             <a href="./about.html" class="btn-about">About us</a>
         </div>
     </section>
-    <section class="product-section">
-     
-
-        <div class="product-image">
-            <img src="https://lemuta.com/cdn/shop/files/Custom_hoodie_manufacturer.webp?v=1741618347&width=1200"
-                alt="Custom Hoodie">
-
-            <!-- Hotspot circles with data attributes for content -->
-            <div class="hotspot" style="top: 40%; left: 55%;" data-title="Premium Hood Design"></div>
-
-            <div class="hotspot" style="top: 65%; left: 25%;" data-title="Kangaroo Pocket"></div>
-
-            <div class="hotspot" style="top: 70%; left: 75%;" data-title="Ribbed Cuffs"></div>
-    </section>
     <section class="brand-section">
         <div class="product-content">
             <h2 class="product-title">Create your own products</h2>
@@ -1099,13 +1143,11 @@
         <br>
         <!-- Big banner -->
         <div class="banner">
-            <video autoplay muted loop controls="false" playsinline
-                src="https://lemuta.com/cdn/shop/videos/c/vp/da28c0174a2b4114b63ed23a169f86e6/da28c0174a2b4114b63ed23a169f86e6.HD-1080p-4.8Mbps-30728095.mp4?v=0"
-                alt="Create your own brand">
-                <div class="overlay">
-                    <h2>CREATE YOUR OWN BRAND</h2>
-                    <a href="#" class="btn">Learn more</a>
-                </div>
+            <img style="height: 100%; object-fit: cover;    " src="./3d.gif">
+            <div class="overlay">
+                <h2>CREATE YOUR OWN BRAND</h2>
+                <a href="#" class="btn">Learn more</a>
+            </div>
         </div>
 
         <!-- Two side images -->
@@ -1127,9 +1169,8 @@
         </div>
 
         <!-- Wide image -->
-        <div class="banner small">
-            <img src="https://lemuta.com/cdn/shop/files/Kollektion_Uebersicht111.jpg?v=1710407061&width=1200"
-                alt="High Quality Blanks">
+        <div style="height: auto;" class="banner small">
+            <img src="./hw.png" alt="High Quality Blanks">
             <div class="overlay">
                 <h2>HIGH QUALITY BLANKS</h2>
             </div>
@@ -1140,6 +1181,49 @@
             <a href="#" class="btn dark">Make an inquiry now!</a>
         </div>
     </section>
+    <section class="py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+      
+      <!-- Sustainable -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-10 w-10 text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20c4.418 0 8-4.03 8-9s-3.582-9-8-9-8 4.03-8 9 3.582 9 8 9z"/>
+        </svg>
+        <h3 class="text-lg font-bold">SUSTAINABLE</h3>
+        <p class="text-gray-700 mt-2">Help to protect our planet</p>
+      </div>
+      
+      <!-- High Quality -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-10 w-10 text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7l3-7z"/>
+        </svg>
+        <h3 class="text-lg font-bold">HIGH QUALITY</h3>
+        <p class="text-gray-700 mt-2">Stand out with premium products</p>
+      </div>
+      
+      <!-- Fast Delivery -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-10 w-10 text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v13H3V3z M3 16h18v2H3v-2z"/>
+        </svg>
+        <h3 class="text-lg font-bold">FAST DELIVERY</h3>
+        <p class="text-gray-700 mt-2">from Germany</p>
+      </div>
+      
+      <!-- WhatsApp -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-10 w-10 text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 11.1c0 4.7-3.9 8.6-8.6 8.6-1.5 0-2.9-.4-4.2-1.1L3 21l1.4-4.2C3.7 15.5 3.4 13.9 3.4 12.5 3.4 7.8 7.3 4 12 4s8 3.8 8 7.1z"/>
+        </svg>
+        <h3 class="text-lg font-bold">WHATSAPP</h3>
+        <p class="text-gray-700 mt-2">+49 15114970053</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-16 text-gray-800 tracking-tight uppercase">
         Our Recent Work
     </h1>
@@ -1149,9 +1233,8 @@
 
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1503341960582-b45751874cf0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Street Fashion"
+                class="group flex-shrink-0 w-72 md:w-80 h-70 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/SH-5.jpg?v=1754408082" alt="Street Fashion"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-teal-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1163,25 +1246,12 @@
                 </div>
             </div>
 
-            <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Hoodie Design"
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-green-600/80 to-emerald-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Comfort Wear</h3>
-                    <p class="text-sm opacity-90">Apparel Design</p>
-                </div>
-            </div>
+           
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Denim Collection"
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/7E81080A-485D-4AF7-97C1-26493EA9AC78.jpg?v=1738754119"
+                    alt="Hoodie Design"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-purple-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1194,9 +1264,8 @@
             </div>
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Accessories"
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/DSC019173.jpg?v=1738754488"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-red-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1209,9 +1278,8 @@
             </div>
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Activewear"
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/SH-329.jpg?v=1748460444"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1223,26 +1291,51 @@
                 </div>
             </div>
 
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="./last.jpg"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+              <div
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="./last2.jpg"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+              <div
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="./last3.jpg"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+           
             <!-- Duplicate items for seamless loop -->
-            <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Fashion Design"
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-purple-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Minimalist Fashion</h3>
-                    <p class="text-sm opacity-90">Clothing Design</p>
-                </div>
-            </div>
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1503341960582-b45751874cf0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Street Fashion"
+                class="group flex-shrink-0 w-72 md:w-80 h-70 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/SH-5.jpg?v=1754408082" alt="Street Fashion"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-teal-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1254,25 +1347,12 @@
                 </div>
             </div>
 
-            <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Hoodie Design"
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-green-600/80 to-emerald-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Comfort Wear</h3>
-                    <p class="text-sm opacity-90">Apparel Design</p>
-                </div>
-            </div>
+           
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Denim Collection"
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/7E81080A-485D-4AF7-97C1-26493EA9AC78.jpg?v=1738754119"
+                    alt="Hoodie Design"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-purple-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1285,9 +1365,8 @@
             </div>
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Accessories"
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/DSC019173.jpg?v=1738754488"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-red-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1300,9 +1379,8 @@
             </div>
 
             <div
-                class="group flex-shrink-0 w-72 md:w-80 h-40 md:h-[10rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Activewear"
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="https://boujeelane-eg.com/cdn/shop/files/SH-329.jpg?v=1748460444"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1313,8 +1391,50 @@
                     <p class="text-sm opacity-90">Sportswear</p>
                 </div>
             </div>
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+               <img src="./last.jpg"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+               
+               
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+            <div
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="./last2.jpg"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+              <div
+                class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+                <img src="./last3.jpg"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
+                    <p class="text-sm opacity-90">Sportswear</p>
+                </div>
+            </div>
+           
         </div>
-
+        
     </div>
     <footer class="footer">
         <div class="footer-content">
@@ -1344,15 +1464,7 @@
 
     <script>
         // Loading animation
-        window.addEventListener('load', function () {
-            setTimeout(() => {
-                const loading = document.getElementById('loading');
-                loading.style.opacity = '0';
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                }, 500);
-            }, 1500);
-        });
+
 
         // Menu toggle animation
         const menuToggle = document.getElementById('menuToggle');
@@ -1436,7 +1548,7 @@
         activateSlide(0);
 
         // Smooth scrolling for CTA button
-     
+
 
         // Scroll animations
         const observerOptions = {
@@ -1589,11 +1701,11 @@
                 hideAllTooltips();
             }
         });
-    const navMenu = document.getElementById('navMenu');
+        const navMenu = document.getElementById('navMenu');
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
     </script>
 </body>
 
