@@ -880,10 +880,6 @@
             animation: scroll 25s linear infinite;
         }
 
-        .animate-scroll:hover {
-            animation-play-state: paused;
-        }
-
         @media (max-width: 768px) {
             @keyframes scroll {
                 0% {
@@ -1028,6 +1024,55 @@
 .nav-container{
     padding: 0;
 }
+    .top-banner {
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .banner-content {
+            display: flex;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        .banner-content.scroll {
+            /* Duplicate content for seamless loop */
+        }
+
+        .banner-item {
+            display: flex;
+            align-items: center;
+            margin-right: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .banner-dot {
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .top-banner:hover .banner-content {
+            animation-play-state: paused;
+        }
+
 
     </style>
     
@@ -1047,7 +1092,7 @@
 
     <!-- Top Banner -->
     <div class="top-banner">
-        <div class="banner-content">
+        <div class="banner-content scroll">
             <div class="banner-item">
                 <span class="banner-dot"></span>
                 <span>CUT & SEW</span>
@@ -1227,7 +1272,7 @@
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-16 text-gray-800 tracking-tight uppercase">
         Our Recent Work
     </h1>
-    <div class="overflow-hidden w-full p-4 rounded-2xl shadow-2xl">
+    <div class="overflow-scroll w-full p-4 rounded-2xl shadow-2xl">
         <div class="flex animate-scroll" id="carouselTrack">
             <!-- Original items -->
 
@@ -1236,15 +1281,7 @@
                 class="group flex-shrink-0 w-72 md:w-80 h-70 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="https://boujeelane-eg.com/cdn/shop/files/SH-5.jpg?v=1754408082" alt="Street Fashion"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-teal-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Urban Streetwear</h3>
-                    <p class="text-sm opacity-90">Brand Identity</p>
-                </div>
-            </div>
+               </div>
 
            
 
@@ -1253,83 +1290,36 @@
                 <img src="https://boujeelane-eg.com/cdn/shop/files/7E81080A-485D-4AF7-97C1-26493EA9AC78.jpg?v=1738754119"
                     alt="Hoodie Design"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-purple-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Denim Collection</h3>
-                    <p class="text-sm opacity-90">Fashion Line</p>
-                </div>
-            </div>
+               </div>
 
             <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="https://boujeelane-eg.com/cdn/shop/files/DSC019173.jpg?v=1738754488"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-red-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Luxury Accessories</h3>
-                    <p class="text-sm opacity-90">Product Design</p>
-                </div>
-            </div>
+                  </div>
 
             <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="https://boujeelane-eg.com/cdn/shop/files/SH-329.jpg?v=1748460444"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
+               
             </div>
 
             <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="./last.jpg"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
-            </div>
+               </div>
               <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="./last2.jpg"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
-            </div>
+               </div>
               <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="./last3.jpg"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
-            </div>
+               </div>
            
             <!-- Duplicate items for seamless loop -->
 
@@ -1337,15 +1327,7 @@
                 class="group flex-shrink-0 w-72 md:w-80 h-70 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="https://boujeelane-eg.com/cdn/shop/files/SH-5.jpg?v=1754408082" alt="Street Fashion"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-teal-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Urban Streetwear</h3>
-                    <p class="text-sm opacity-90">Brand Identity</p>
-                </div>
-            </div>
+                 </div>
 
            
 
@@ -1354,83 +1336,37 @@
                 <img src="https://boujeelane-eg.com/cdn/shop/files/7E81080A-485D-4AF7-97C1-26493EA9AC78.jpg?v=1738754119"
                     alt="Hoodie Design"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-purple-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Denim Collection</h3>
-                    <p class="text-sm opacity-90">Fashion Line</p>
-                </div>
-            </div>
+                 </div>
 
             <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="https://boujeelane-eg.com/cdn/shop/files/DSC019173.jpg?v=1738754488"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-red-600/80 to-pink-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Luxury Accessories</h3>
-                    <p class="text-sm opacity-90">Product Design</p>
-                </div>
-            </div>
+                   </div>
 
             <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="https://boujeelane-eg.com/cdn/shop/files/SH-329.jpg?v=1748460444"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
-            </div>
             <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                <img src="./last.jpg"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                
                
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
-            </div>
+                 </div>
             <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="./last2.jpg"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
+               
             </div>
               <div
                 class="group flex-shrink-0 w-72 md:w-80 h-100 md:h-[35rem] mr-5 rounded-xl overflow-hidden relative cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
                 <img src="./last3.jpg"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-orange-600/80 to-yellow-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2">Active Collection</h3>
-                    <p class="text-sm opacity-90">Sportswear</p>
-                </div>
+               
             </div>
            
         </div>
@@ -1513,12 +1449,25 @@
 
             if (currentSlide === 1)
                 hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://lemuta.com/cdn/shop/files/Istanbul_Production_Sewing.webp?v=1741862168&width=600')`;
-
+            if (currentSlide === 2)
+                hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./Untitled design-4.gif')`;
             // Animate hero text (staggered fade-in)
             const subtitle = document.querySelector('.hero-subtitle');
             const title = document.querySelector('.hero-title');
             const cta = document.querySelector('.hero-cta');
+              if (currentSlide === 1){
 
+                  subtitle.textContent = `ALL IN ONE TEXTILE SOLUTIONS`
+              }
+             if (currentSlide === 0){
+
+                  subtitle.textContent = `HIGH QUALITY BLANKS`;
+              }
+                if (currentSlide === 2){
+
+                  subtitle.textContent = `YOUR NEEDS OUR EXPERTISE`
+              }
+                 
             // Reset
             [subtitle, title, cta].forEach(el => {
                 el.classList.remove('fade-in');

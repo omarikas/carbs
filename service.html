@@ -254,6 +254,58 @@
         /* hide burger on desktop */
       }
     }
+
+    .top-banner {
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .banner-content {
+            display: flex;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        .banner-content.scroll {
+            /* Duplicate content for seamless loop */
+        }
+
+        .banner-item {
+            display: flex;
+            align-items: center;
+            margin-right: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .banner-dot {
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .top-banner:hover .banner-content {
+            animation-play-state: paused;
+        }
+
+
+ 
   </style>
 </head>
 
@@ -601,27 +653,28 @@
     const services = {
       dtf: {
         title: "DTF Printing",
-        description: "Direct-to-Film printing delivers vibrant, long-lasting prints for garments with precision and durability.",
+        description: "Direct-to-film (DTF) printing is a process of printing images or designs onto a film that is then transferred to a garment. This type of printing is becoming increasingly popular due to its lower cost and faster turnaround time",
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/plotter-ezgif.com-effects.gif"
       },
       embroidery: {
         title: "Embroidery",
-        description: "Our embroidery service provides detailed, high-quality stitching to bring your logos and designs to life.",
+        description: "Embroidery can be used to create a variety of designs, from simple logos to complex images. we offer embroidery on a variety of garments, including t-shirts, hoodies, sweatshirts, and more. We use high-quality embroidery machines to create durable and long-lasting designs. We also offer a variety of embroidery thread colors to choose from, so you can create a design that perfectly matches your style.",
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/embroidery-ezgif.com-effects.gif"
       },
       silkscreen: {
         title: "Silk Screen",
-        description: "Silk screen printing offers bold colors and durability, perfect for bulk orders and creative designs.",
+        description: `Screen printing is a printing method that uses a stencil to transfer ink onto a garment. It is a versatile and durable printing method that can be used on a variety of garments, including t-shirts, hoodies, sweatshirts, and more. Screen printing is also a good choice for large quantities, as it can be relatively inexpensive to produce multiple prints. However, screen printing is best suited for designs with a few colors. If the design is complex and has many colors, it is better to go with digital printing.
+At Brands Factory, we use high-quality inks and screens to ensure that our prints are vibrant and durable.`,
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/tshirt-ezgif.com-effects.gif"
       },
       dye: {
         title: "Garment Dye",
-        description: "Give your garments a unique look with garment dyeing, providing a vintage and worn-in aesthetic.",
+        description: ` we offer garment dyeing services for a variety of garments, including t-shirts, hoodies, sweatshirts, sweatpants and more. Garment dyeing is a process that uses dye to color garments after they have been sewn. This allows us to create unique and custom garments that cannot be achieved with other printing methods.`,
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/t-shirt-ezgif.com-effects.gif"
       },
       design: {
         title: "Graphic Design",
-        description: "Our creative team delivers professional graphic design services tailored to your brand identity.",
+        description:`We collaborate with brands to design thoughtful, beautiful products, from apparel and packaging to lifestyle goods. Our design process considers form, function, and the emotional connection between product and consume` ,
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/ui-design-ezgif.com-effects.gif"
       },
       manufacturing: {
