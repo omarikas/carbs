@@ -303,8 +303,19 @@
         .top-banner:hover .banner-content {
             animation-play-state: paused;
         }
-
-
+         .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            visibility: hidden;
+        }
+   .bg-custom-green {
+            background-color: #3B4E42;
+        }
  
   </style>
 </head>
@@ -335,22 +346,69 @@
       </div>
     </div>
   </nav>
-  <section class="hero relative" id="hero">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70 z-0"></div>
+  <section class="hero relative overflow-hidden" id="hero">
+        <!-- Video Background -->
+        <video 
+        id="dtf"
 
-    <!-- Hero Content -->
-    <div class="relative z-10 text-center text-white px-6 animate-fadeInUp">
-      <h1 id="service-title" class="text-5xl font-extrabold mb-4 tracking-wide">Service</h1>
-      <p class="text-lg max-w-2xl mx-auto opacity-90 mb-6">
-        Discover our premium services tailored to elevate your brand identity.
-      </p>
-      <a href="#service-section"
-        class="inline-block bg-[#3B4E42] text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-lightgreen-300 transition-transform transform hover:scale-105">
-        Explore Services
-      </a>
-    </div>
-  </section>
+            class="hero-video" 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+        >
+            <source src="dtf.MOV">
+            <!-- Fallback background image if video fails to load -->
+            Your browser does not support the video tag.
+        </video>
+          <video 
+        id="embroidery"
+
+            class="hero-video" 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            poster="https://via.placeholder.com/1920x1080/3B4E42/ffffff?text=Loading+Video"
+        >
+            <source src="emb.MOV">
+            <!-- Fallback background image if video fails to load -->
+            Your browser does not support the video tag.
+        </video>
+        <video 
+        id="manufacturing"
+
+            class="hero-video" 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            poster="https://via.placeholder.com/1920x1080/3B4E42/ffffff?text=Loading+Video"
+        >
+            <source src="Man.MOV">
+            <!-- Fallback background image if video fails to load -->
+            Your browser does not support the video tag.
+        </video>
+        
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70 z-0"></div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center text-white px-6 animate-fadeInUp">
+            <h1 id="service-title" class="text-5xl font-extrabold mb-4 tracking-wide">Service</h1>
+            <p class="text-lg max-w-2xl mx-auto opacity-90 mb-6">
+                Discover our premium services tailored to elevate your brand identity.
+            </p>
+            <a href="#service-section"
+                class="inline-block bg-custom-green text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-lightgreen-300 hover:text-black transition-all duration-300 transform hover:scale-105">
+                Explore Services
+            </a>
+        </div>
+        
+        <!-- Video Controls (Optional) -->
+      
+    </section>
 
   <!-- Service Section -->
   <section id="service-section" class="py-20 px-6 max-w-4xl mx-auto text-center relative">
@@ -363,9 +421,8 @@
         <div class="absolute inset-0 rounded-xl animate-pulse"></div>
       </div>
       <h2 class="text-3xl font-bold mb-4 relative inline-block">
-        <span id="service-title-duplicate" class="border-b-4 border-yellow-400 pb-1">Service</span>
       </h2>
-      <p id="service-description" class="text-lg text-gray-700 leading-relaxed"></p>
+      <p id="service-description" style="text-align: left;" class="text-lg text-gray-700 leading-relaxed"></p>
     </div>
   </section>
 
@@ -653,8 +710,25 @@
     const services = {
       dtf: {
         title: "DTF Printing",
-        description: "Direct-to-film (DTF) printing is a process of printing images or designs onto a film that is then transferred to a garment. This type of printing is becoming increasingly popular due to its lower cost and faster turnaround time",
-        image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/plotter-ezgif.com-effects.gif"
+        description:` <div class="step-content">
+        <div class="step-title">
+          <strong>1. Design Preparation </strong></div>
+        We print your custom images or designs onto high-quality film using advanced DTF technology and vibrant, durable inks.
+    </div>
+    
+    <div class="step-content">
+        <div class="step-title">
+          <strong>2. Film Transfer </strong></div>
+        The printed film is carefully transferred onto your chosen garment - whether it's t-shirts, hoodies, sweatshirts, or other apparel.
+    </div>
+    
+    <div class="step-content">
+        <div class="step-title">
+          <strong>3. Quality Finish</strong></div>
+        We ensure every print is vibrant, durable, and perfectly applied, delivering professional results at an affordable price with fast turnaround times.
+    </div>`,
+        image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/plotter-ezgif.com-effects.gif",
+        bg:'dtf.gif'
       },
       embroidery: {
         title: "Embroidery",
@@ -663,14 +737,39 @@
       },
       silkscreen: {
         title: "Silk Screen",
-        description: `Screen printing is a printing method that uses a stencil to transfer ink onto a garment. It is a versatile and durable printing method that can be used on a variety of garments, including t-shirts, hoodies, sweatshirts, and more. Screen printing is also a good choice for large quantities, as it can be relatively inexpensive to produce multiple prints. However, screen printing is best suited for designs with a few colors. If the design is complex and has many colors, it is better to go with digital printing.
-At Brands Factory, we use high-quality inks and screens to ensure that our prints are vibrant and durable.`,
+        description: ` <div class="step-content">
+        <strong>1. Stencil Creation</strong><br>
+        We create precise stencils for your design, perfect for simple to moderate complexity artwork with a few colors on t-shirts, hoodies, sweatshirts, and more.
+    </div>
+    
+    <div class="step-content">
+        <strong>2. High-Quality Printing</strong><br>
+        Using premium inks and screens, we transfer your design onto garments through our versatile and durable screen printing method, ensuring vibrant and long-lasting results.
+    </div>
+    
+    <div class="step-content">
+        <strong>3. Quality Control</strong><br>
+        Every printed garment is inspected to guarantee our prints meet the highest standards for durability and color vibrancy.
+    </div>`,
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/tshirt-ezgif.com-effects.gif"
       },
       dye: {
         title: "Garment Dye",
-        description: ` we offer garment dyeing services for a variety of garments, including t-shirts, hoodies, sweatshirts, sweatpants and more. Garment dyeing is a process that uses dye to color garments after they have been sewn. This allows us to create unique and custom garments that cannot be achieved with other printing methods.`,
-        image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/t-shirt-ezgif.com-effects.gif"
+        description: `<div class="step-content">
+        <strong>1. Garment Selection</strong><br>
+        We start with your sewn garments including t-shirts, hoodies, sweatshirts, sweatpants, and more, ready for the dyeing transformation.
+    </div>
+    
+    <div class="step-content">
+        <strong>2. Custom Dyeing</strong><br>
+        Using specialized dye processes, we color your garments after construction, allowing us to create unique color effects and custom looks that other printing methods cannot achieve.
+    </div>
+    
+    <div class="step-content">
+        <strong>3. Quality Treatment</strong><br>
+        Each dyed garment is carefully processed and finished to ensure vibrant, lasting color and the perfect custom appearance you're looking for.
+    </div>`
+,       image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/t-shirt-ezgif.com-effects.gif"
       },
       design: {
         title: "Graphic Design",
@@ -679,12 +778,36 @@ At Brands Factory, we use high-quality inks and screens to ensure that our print
       },
       manufacturing: {
         title: "Manufacturing",
-        description: "We offer full-scale garment manufacturing, ensuring quality and efficiency from start to finish.",
+        description: `<div>
+            <strong>1. Design</strong><br>
+            We work with you to create custom designs that fit your exact needs. All materials are sourced from ethical, sustainable suppliers.
+            <br><br>
+            
+            <strong>2. Manufacturing</strong><br>
+            Using advanced machinery and techniques, we craft durable, high-quality garments. Every piece is inspected by our quality control team before shipping.
+            <br><br>
+            
+            <strong>3. Delivery</strong><br>
+            We package and ship your orders worldwide with fast, efficient service so you receive your clothes quickly.
+        </div>`,
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/factory-ezgif.com-effects.gif"
       },
       finishing: {
         title: "Finishing",
-        description: "Professional finishing services ensure your garments are retail-ready with the perfect final touch.",
+        description:`<div class="step-content">
+        <strong>1. Quality Inspection</strong><br>
+        Every garment undergoes thorough quality checks to ensure it meets our high standards before moving to the finishing stage.
+    </div>
+    
+    <div class="step-content">
+        <strong>2. Professional Finishing</strong><br>
+        We apply specialized finishing techniques including pressing, steaming, and detailing to give your clothes a premium, retail-ready appearance.
+    </div>
+    
+    <div class="step-content">
+        <strong>3. Premium Packaging</strong><br>
+        Your garments are carefully packaged and presented using high-quality materials, ensuring they arrive looking their absolute best.
+    </div>`,
         image: "https://brandsfactoryco.com/wp-content/uploads/2025/05/price-tag-ezgif.com-effects.gif"
       },
       photoshoot: {
@@ -702,8 +825,9 @@ At Brands Factory, we use high-quality inks and screens to ensure that our print
     const section = document.getElementById("service-section");
     if (serviceKey && services[serviceKey]) {
       document.getElementById("service-title").textContent = services[serviceKey].title;
-      document.getElementById("service-description").textContent = services[serviceKey].description;
+      document.getElementById("service-description").innerHTML = services[serviceKey].description;
       document.getElementById("service-image").src = services[serviceKey].image;
+      document.getElementById(serviceKey).style.visibility="visible"
     } else {
       section.innerHTML = `<h1 class="text-2xl font-bold">Service not found</h1>`;
     }
