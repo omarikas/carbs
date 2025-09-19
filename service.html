@@ -724,6 +724,7 @@
       document.getElementById("service-description").innerHTML = services[serviceKey].description;
       document.getElementById("service-image").src = services[serviceKey].image;
       document.getElementById(serviceKey).style.display="block"
+       document.getElementById(serviceKey).play();
     } else {
       section.innerHTML = `<h1 class="text-2xl font-bold">Service not found</h1>`;
     }
