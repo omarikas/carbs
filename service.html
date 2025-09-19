@@ -311,7 +311,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            visibility: hidden;
+            display: none;
         }
    .bg-custom-green {
             background-color: #3B4E42;
@@ -723,7 +723,7 @@
       document.getElementById("service-title").textContent = services[serviceKey].title;
       document.getElementById("service-description").innerHTML = services[serviceKey].description;
       document.getElementById("service-image").src = services[serviceKey].image;
-      document.getElementById(serviceKey).style.visibility="visible"
+      document.getElementById(serviceKey).style.display="block"
     } else {
       section.innerHTML = `<h1 class="text-2xl font-bold">Service not found</h1>`;
     }
