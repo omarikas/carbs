@@ -695,7 +695,230 @@
             animation-play-state: paused;
         }
 
+ .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 100px;
+            transition: all 0.3s ease;
+        }
 
+        .search-overlay.active {
+            display: flex;
+        }
+
+        .search-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .search-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: rgba(59, 78, 66, 255);
+            box-shadow: 0 0 0 3px rgba(59, 78, 66, 0.1);
+        }
+
+        .search-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .search-close:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .search-section {
+            margin-bottom: 30px;
+        }
+
+        .search-section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(59, 78, 66, 255);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(59, 78, 66, 0.1);
+        }
+
+        .search-item {
+            display: block;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .search-item:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left-color: rgba(59, 78, 66, 255);
+            transform: translateX(5px);
+        }
+
+        .search-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: rgba(59, 78, 66, 255);
+        }
+
+        .search-item-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .search-highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .no-results-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .search-suggestions {
+            margin-top: 20px;
+        }
+
+        .suggestion-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(59, 78, 66, 0.1);
+            color: rgba(59, 78, 66, 255);
+            border-radius: 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .suggestion-tag:hover {
+            background: rgba(59, 78, 66, 255);
+            color: white;
+        }
+
+        /* Navigation styles for demo */
+
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            stroke: #333;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+
+        .search-icon:hover {
+            stroke: rgba(59, 78, 66, 255);
+            transform: scale(1.1);
+        }
+
+        /* Demo content */
+        .demo-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .demo-title {
+            font-size: 2.5rem;
+            color: rgba(59, 78, 66, 255);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .demo-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .demo-button {
+            background: rgba(59, 78, 66, 255);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-button:hover {
+            background: rgba(47, 62, 53, 255);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 78, 66, 0.3);
+        }
  
     </style>
 </head>
@@ -732,9 +955,13 @@
     </button>
 
     <!-- Logo -->
-    <div  class="logo">HOUSE OF WEAR</div>
 
-<svg width="24" height="24" style="position: absolute;right:20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div  class="logo">
+        
+        
+        <a href="./index.html">HOUSE OF WEAR</a></div>
+
+<svg id="searchIcon" class="search-icon"  width="24" height="24" style="position: absolute;right:20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
   <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
 </svg>
@@ -748,6 +975,306 @@
     </div>
   </div>
 </nav>
+
+
+
+
+
+
+
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="Search services, pages, or information..."
+                    autocomplete="off"
+                >
+                <button class="search-close" onclick="closeSearch()">✕</button>
+            </div>
+
+            <div class="search-results" id="searchResults">
+                <div class="search-suggestions">
+                    <h3 style="margin-bottom: 15px; color: #666;">Popular searches:</h3>
+                    <span class="suggestion-tag" onclick="searchFor('DTF printing')">DTF Printing</span>
+                    <span class="suggestion-tag" onclick="searchFor('embroidery')">Embroidery</span>
+                    <span class="suggestion-tag" onclick="searchFor('wholesale')">Wholesale</span>
+                    <span class="suggestion-tag" onclick="searchFor('contact')">Contact</span>
+                    <span class="suggestion-tag" onclick="searchFor('services')">Services</span>
+                    <span class="suggestion-tag" onclick="searchFor('about')">About</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Search data - In a real implementation, this would come from your CMS or database
+        const searchData = {
+            pages: [
+                {
+                    title: "Home",
+                    url: "./index.html",
+                    description: "Welcome to House of Wear - Premium blanks, wholesale & customization services",
+                    keywords: ["home", "main", "welcome", "house of wear"]
+                },
+                {
+                    title: "Services",
+                    url: "./services.html",
+                    description: "Complete range of customization services including DTF printing, embroidery, silk screen printing",
+                    keywords: ["services", "customization", "printing", "embroidery"]
+                },
+                {
+                    title: "About Us",
+                    url: "./about.html",
+                    description: "Learn about our company, mission, and commitment to quality",
+                    keywords: ["about", "company", "mission", "quality", "story"]
+                },
+                {
+                    title: "Contact",
+                    url: "./contact.html",
+                    description: "Get in touch with our team for quotes and inquiries",
+                    keywords: ["contact", "phone", "email", "address", "location"]
+                }
+            ],
+            services: [
+                {
+                    title: "DTF Printing",
+                    url: "./services.html#dtf",
+                    description: "High-quality Direct-to-Film printing for vibrant, durable designs on any fabric",
+                    keywords: ["dtf", "direct to film", "printing", "vibrant", "durable"]
+                },
+                {
+                    title: "Embroidery",
+                    url: "./services.html#embroidery",
+                    description: "Professional embroidery services for logos, designs, and custom branding",
+                    keywords: ["embroidery", "logo", "branding", "thread", "professional"]
+                },
+                {
+                    title: "Silk Screen Printing",
+                    url: "./services.html#silkscreen",
+                    description: "Traditional silk screen printing for bulk orders and solid color designs",
+                    keywords: ["silk screen", "screen printing", "bulk", "solid color", "traditional"]
+                },
+                {
+                    title: "Garment Dyeing",
+                    url: "./services.html#dyeing",
+                    description: "Custom garment dyeing services for unique color combinations",
+                    keywords: ["dyeing", "garment dye", "color", "custom", "unique"]
+                },
+                {
+                    title: "Graphic Design",
+                    url: "./services.html#design",
+                    description: "Professional graphic design services for logos, prints, and branding",
+                    keywords: ["graphic design", "logo design", "branding", "creative", "design"]
+                },
+                {
+                    title: "Manufacturing",
+                    url: "./services.html#manufacturing",
+                    description: "Complete garment manufacturing from concept to finished product",
+                    keywords: ["manufacturing", "production", "garment", "complete", "finished"]
+                },
+                {
+                    title: "Finishing Services",
+                    url: "./services.html#finishing",
+                    description: "Quality finishing touches including tags, labels, and packaging",
+                    keywords: ["finishing", "tags", "labels", "packaging", "quality"]
+                },
+                {
+                    title: "Brand Photoshoot",
+                    url: "./services.html#photoshoot",
+                    description: "Professional photography services for your brand and products",
+                    keywords: ["photoshoot", "photography", "brand", "product", "professional"]
+                },
+                {
+                    title: "Wholesale Blanks",
+                    url: "./services.html#wholesale",
+                    description: "High-quality blank apparel for wholesale and bulk orders",
+                    keywords: ["wholesale", "blanks", "bulk", "apparel", "quality"]
+                }
+            ],
+            info: [
+                {
+                    title: "Business Hours",
+                    url: "./contact.html#hours",
+                    description: "Office and production facility hours: Saturday - Thursday, 12:00 AM - 6:00 PM",
+                    keywords: ["hours", "business hours", "schedule", "office", "facility"]
+                },
+                {
+                    title: "Location",
+                    url: "./contact.html#location",
+                    description: "Factory No. 100, Anabeeb Al Petrol Street, Gesr el suez, Cairo Governorate",
+                    keywords: ["location", "address", "factory", "cairo", "egypt"]
+                },
+                {
+                    title: "Phone",
+                    url: "./contact.html#phone",
+                    description: "Call us at +201149149116 for sales and general inquiries",
+                    keywords: ["phone", "call", "sales", "inquiries", "contact"]
+                },
+                {
+                    title: "Email",
+                    url: "./contact.html#email",
+                    description: "Email us at houseofwearfactory@gmail.com for general information",
+                    keywords: ["email", "contact", "information", "inquiries"]
+                }
+            ]
+        };
+
+        // Search functionality
+        function openSearch() {
+            const overlay = document.getElementById('searchOverlay');
+            const input = document.getElementById('searchInput');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => input.focus(), 300);
+        }
+
+        function closeSearch() {
+            const overlay = document.getElementById('searchOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            clearSearch();
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('searchInput');
+            const results = document.getElementById('searchResults');
+            input.value = '';
+            results.innerHTML = `
+                <div class="search-suggestions">
+                    <h3 style="margin-bottom: 15px; color: #666;">Popular searches:</h3>
+                    <span class="suggestion-tag" onclick="searchFor('DTF printing')">DTF Printing</span>
+                    <span class="suggestion-tag" onclick="searchFor('embroidery')">Embroidery</span>
+                    <span class="suggestion-tag" onclick="searchFor('wholesale')">Wholesale</span>
+                    <span class="suggestion-tag" onclick="searchFor('contact')">Contact</span>
+                    <span class="suggestion-tag" onclick="searchFor('services')">Services</span>
+                    <span class="suggestion-tag" onclick="searchFor('about')">About</span>
+                </div>
+            `;
+        }
+
+        function searchFor(query) {
+            const input = document.getElementById('searchInput');
+            input.value = query;
+            performSearch(query);
+        }
+
+        function performSearch(query) {
+            if (!query.trim()) {
+                clearSearch();
+                return;
+            }
+
+            const results = document.getElementById('searchResults');
+            const searchTerm = query.toLowerCase();
+            
+            // Search through all categories
+            const pageResults = searchCategory(searchData.pages, searchTerm);
+            const serviceResults = searchCategory(searchData.services, searchTerm);
+            const infoResults = searchCategory(searchData.info, searchTerm);
+            
+            const allResults = [
+                { title: 'Pages', results: pageResults },
+                { title: 'Services', results: serviceResults },
+                { title: 'Information', results: infoResults }
+            ].filter(category => category.results.length > 0);
+
+            if (allResults.length === 0) {
+                results.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>No results found for "${query}"</h3>
+                        <p>Try searching for:</p>
+                        <div class="search-suggestions" style="margin-top: 20px;">
+                            <span class="suggestion-tag" onclick="searchFor('DTF printing')">DTF Printing</span>
+                            <span class="suggestion-tag" onclick="searchFor('embroidery')">Embroidery</span>
+                            <span class="suggestion-tag" onclick="searchFor('contact')">Contact</span>
+                            <span class="suggestion-tag" onclick="searchFor('wholesale')">Wholesale</span>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            allResults.forEach(category => {
+                html += `
+                    <div class="search-section">
+                        <div class="search-section-title">${category.title}</div>
+                `;
+                
+                category.results.forEach(item => {
+                    const highlightedTitle = highlightText(item.title, searchTerm);
+                    const highlightedDesc = highlightText(item.description, searchTerm);
+                    
+                    html += `
+                        <a href="${item.url}" class="search-item">
+                            <div class="search-item-title">${highlightedTitle}</div>
+                            <div class="search-item-desc">${highlightedDesc}</div>
+                        </a>
+                    `;
+                });
+                
+                html += '</div>';
+            });
+
+            results.innerHTML = html;
+        }
+
+        function searchCategory(items, searchTerm) {
+            return items.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(searchTerm);
+                const descMatch = item.description.toLowerCase().includes(searchTerm);
+                const keywordMatch = item.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(searchTerm)
+                );
+                return titleMatch || descMatch || keywordMatch;
+            }).sort((a, b) => {
+                // Prioritize title matches
+                const aTitle = a.title.toLowerCase().includes(searchTerm);
+                const bTitle = b.title.toLowerCase().includes(searchTerm);
+                if (aTitle && !bTitle) return -1;
+                if (!aTitle && bTitle) return 1;
+                return 0;
+            });
+        }
+
+        function highlightText(text, searchTerm) {
+            if (!searchTerm.trim()) return text;
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        // Event listeners
+        document.getElementById('searchIcon').addEventListener('click', openSearch);
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            performSearch(e.target.value);
+        });
+
+        // Close search on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSearch();
+            }
+        });
+
+        // Close search on overlay click
+        document.getElementById('searchOverlay').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeSearch();
+            }
+        });
+
+        // Prevent search container clicks from closing overlay
+        document.querySelector('.search-container').addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    </script>
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <h1>Contact Us</h1>
@@ -783,7 +1310,7 @@
                             <h3>Call Us</h3>
                         </div>
                         <p>Sales & General Inquiries</p>
-                        <a href="tel:+1234567890">+201149149116</a>
+                        <a href="tel:+201149149116">+201149149116</a>
                     </div>
 
                     <div class="contact-card">
@@ -792,7 +1319,7 @@
                             <h3>Email Us</h3>
                         </div>
                         <p>General Information</p>
-                        <a href="mailto:info@houseofwear.com">houseofwearfactory@gmail.com</a>
+                        <a href="mailto:houseofwearfactory@gmail.com">houseofwearfactory@gmail.com</a>
                         
                     </div>
 
@@ -831,7 +1358,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="company">Company Name</label>
+                        <label for="company">Brand Name</label>
                         <input type="text" id="company" name="company">
                     </div>
 
@@ -896,7 +1423,7 @@
                 <a href="./contact.html">Contact</a>
             </div>
 
-            <div class="footer-socials">
+          <div class="footer-socials">
                 <a href="https://wa.link/x45wpa"><img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" /></a>
                 <a href="https://www.instagram.com/houseofwearfactory?igsh=d3c2Y21ieTN1dTAz"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" /></a>
                 <a href="https://www.tiktok.com/@houseofwear.factory?_t=ZS-8zjJR7WxQs4&_r=1"><img src="https://img.icons8.com/ios-filled/20/ffffff/tiktok--v1.png" /></a>
